@@ -8,7 +8,7 @@
     --nieve-blanco: #F2F2F2;
 }
 
-/* ==== MENÚ LATERAL VERTICAL ==== */
+/* ==== MENÚ LATERAL DESKTOP ==== */
 .menu-lateral {
     position: fixed;
     top: 0;
@@ -49,7 +49,7 @@
     transform: translateX(10px);
 }
 
-/* ===== Ajuste del body para que no tape el menú ===== */
+/* ===== Ajuste general ===== */
 body {
     margin-left: 240px;
     background-color: var(--nieve-blanco);
@@ -73,7 +73,7 @@ body {
     background: linear-gradient(
         to bottom,
         rgba(0,0,0,0.5),
-        rgba(30, 78, 102, 0.7) /* azul agua */
+        rgba(30, 78, 102, 0.7)
     );
 }
 
@@ -90,7 +90,6 @@ body {
     letter-spacing: 3px;
     text-shadow: 0 0 12px black;
     font-family: "Georgia", serif;
-    color: var(--nieve-blanco);
 }
 
 .separator-pro {
@@ -102,7 +101,6 @@ body {
 }
 
 .hero-content-pro p {
-    color: var(--nieve-blanco);
     font-size: 1.2rem;
     line-height: 1.7;
     margin-bottom: 30px;
@@ -122,4 +120,69 @@ body {
 .hero-btn-pro:hover {
     background: var(--tierra-verde);
     color: var(--tierra-oscura);
+}
+
+/* ========================================================
+   ✔️ RESPONSIVE DESIGN - PARA CELULARES Y TABLETS
+   ======================================================== */
+
+/* ===== Pantallas menores a 850px (tablets vertical) ===== */
+@media (max-width: 850px) {
+    body {
+        margin-left: 0;  /* Elimina espacio del menú */
+    }
+
+    .menu-lateral {
+        width: 200px;
+    }
+
+    .hero-content-pro h1 {
+        font-size: 2.4rem;
+    }
+}
+
+/* ===== Pantallas menores a 650px (CELULARES) ===== */
+@media (max-width: 650px) {
+
+    /* Menú lateral se vuelve superior (tipo móvil) */
+    .menu-lateral {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px 0;
+        border-right: none;
+        border-bottom: 4px solid var(--fuego-naranja);
+    }
+
+    .menu-lateral nav ul li {
+        margin: 10px 0;
+    }
+
+    body {
+        margin-left: 0;
+    }
+
+    /* HERO ADAPTABLE */
+    .hero-pro {
+        height: auto;
+        padding: 60px 20px;
+        text-align: center;
+    }
+
+    .hero-content-pro h1 {
+        font-size: 1.9rem;
+    }
+
+    .hero-content-pro p {
+        font-size: 1rem;
+    }
+
+    .separator-pro {
+        width: 70%;
+    }
+
+    .hero-btn-pro {
+        padding: 10px 22px;
+        font-size: 1rem;
+    }
 }
