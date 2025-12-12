@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Historia de Piñoncito</title>
+  <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* ========================
+       VARIABLES DE COLOR
+    ======================== */
+    :root {
+      --amarillo: #FFD700;
+      --naranja: #FF8C00;
+      --marron: #928678;
+      --claro: #FFFAF0;
+      --oscuro: #333;
+      --texto: #333;
+      --blanco: #fff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--claro);
+      color: var(--texto);
+      padding: 20px;
+    }
+
+    h1, h2 {
+      color: var(--naranja);
+      text-align: center;
+    }
+
+    .buttons__ {
+      margin: 20px 0;
+    }
+
+    button {
+      background-color: var(--amarillo);
+      color: var(--oscuro);
+      padding: 10px 15px;
+      border: none;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: var(--naranja);
+      color: var(--blanco);
+    }
+
+    .section {
+      display: none;
+      margin-top: 20px;
+      background-color: var(--blanco);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .active {
+      display: block;
+    }
+
+    .button {
+      background-color: var(--naranja);
+      color: var(--blanco);
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: var(--amarillo);
+      color: var(--oscuro);
+    }
+
+
+    .profile-img {
+  width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto; /* Esto centra la imagen horizontalmente */
+}
+
+
+    .back-button {
+      background-color: var(--naranja);
+      color: var(--blanco);
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+      display: block;
+      margin: 30px auto;
+    }
+
+    .back-button:hover {
+      background-color: var(--amarillo);
+      color: var(--oscuro);
+    }
+
+    .back-button i {
+      margin-right: 0.5rem;
+    }
+
+/* class de fundadores */
+/* Sección general */
+.section {
+  padding: 40px 20px;
+  background-color: var(--arena);
+  color: var(--café);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Título de la sección */
+#fundadoras h2 {
+  text-align: center;
+  color: var(--verde-oscuro);
+  margin-bottom: 40px;
+  font-size: 2em;
+  border-bottom: 4px solid var(--naranja);
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+/* Contenedor de cada guardián */
+.guardian {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  background-color: var(--blanco);
+  padding: 20px;
+  border-left: 10px solid var(--naranja);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagen del guardián */
+.guardian-img {
+  width: 250px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  border: 4px solid var(--verde-claro);
+}
+
+/* Texto al lado de la imagen */
+.guardian-text {
+  flex: 1;
+  text-align: left;
+  font-size: 1.1rem;
+  color: var(--café);
+  font-style: italic;
+  background-color: var(--arena);
+  padding: 15px;
+  border-radius: 8px;
+}
+  </style>
+</head>
+
+<body>
+  <!-- Encabezado -->
+  <header>
+    <h1>GUARDIANES DE LA MEMORIA ANCESTRAL</h1>
+  </header>
+
+  <h1>Piñoncito: Territorio de Memoria y Esperanza</h1>
+  <p>
+    Bienvenidos al recorrido interactivo por la historia viva de la comunidad de Piñoncito.
+    Aquí conocerás los lugares sagrados, los saberes ancestrales y el camino de resistencia
+    de quienes vivieron y habitan esta tierra.
+  </p>
+
+  <div class="buttons__">
+    
+    <button onclick="mostrarSeccion('cerro')">Cerro Viejo</button>
+    <button onclick="mostrarSeccion('piedra')">Piedra Mola</button>
+    <button onclick="mostrarSeccion('tamaca')">Tamaca de Toro</button>
+    <button onclick="mostrarSeccion('fundadoras')">Mayores de la comunidad</button>
+    <button onclick="mostrarSeccion('Relatos de la Abuela')">relatos de la abuela</button>
+    <button onclick="mostrarSeccion('actualidad')">Actualidad</button>
+
+  <div id="cerro" class="section">
+    <h2>El Cerro Viejo</h2>
+    <img src="piñoncito/cerro viejo.jpg" class="profile-img" alt="Cerro Viejo">
+    <p>El “Cerro Viejo”, de acuerdo a los relatos de nuestros mayores, no es solo una montaña: es un lugar de memoria y sabiduría.
+      Recibe su nombre en honor al mamo Don Viejo. Durante esa época se vivía sin sal, con alimentos como la mazamorra de algarroba
+      y los insectos sagrados: chicharras (zhima), cocuyos (borruno), mariposas (zhigukula) y gusanos (chi).</p>
+  </div>
+
+  <div id="piedra" class="section">
+    <h2>Piedra Mola (Atogua)</h2>
+    <img src="piñoncito/piedra de moler.jpg" class="profile-img" alt="Piedra Mola">
+    <p>Espacio donde antiguamente se molían o trituraban los alimentos, como el maíz para preparar arepas, bollos y mazamorras, 
+      así como el café, entre otros. Cada casa tenía una de estas piedras molas. Con el paso de los años, solo las personas 
+      mayores recuerdan su uso, ya que actualmente han sido reemplazadas por molinos.</p>
+  </div>
+
+  <div id="tamaca" class="section">
+    <h2>Tamaca de Toro</h2>
+    <img src="piñoncito/tamaca de toro .jpg" class="profile-img" alt="Tamaca de Toro">
+    <p>Lugar sagrado para la sanación espiritual profunda. El toro, para el pueblo Wiwa, es símbolo de fuerza. 
+      Si alguien deseaba sacrificar una res, debía retribuir espiritualmente al espacio, para que la sangre derramada 
+      sirviera como sanación para las demás reces del corral.</p>
+  </div>
+
+  <div id="fundadoras" class="section">
+    <h2>Guardianes de Piñoncito</h2>
+  
+    <div class="guardian">
+      <img src="piñoncito/juana maestre.jpg" alt="Juana Maestre" class="guardian-img">
+      <p class="guardian-text">Esta es la antigua vivienda donde Juana Maestre vivió y forjó su hogar,
+         un espacio sagrado que guarda memorias de lucha, amor y sabiduría ancestral. En este lugar,
+          Juana sembró los valores que aún hoy perviven en la comunidad, dejando huellas imborrables 
+          en la historia del territorio Wiwa de Piñoncito</p>
+    </div>
+  
+    <div class="guardian">
+      <img src="piñoncito/virgilia maestre.jpg" alt="Briguilia Maestre" class="guardian-img">
+      <p class="guardian-text">Antigua vivienda donde Briguilia Maestre vivió y forjó su hogar con sabiduría
+         y fortaleza. En este lugar nacieron historias, se transmitieron saberes ancestrales y se 
+         fortaleció el tejido familiar que aún vive en la memoria de su descendencia y comunidad.</p>
+    </div>
+  
+    <div class="guardian">
+      <img src="piñoncito/maria montaño.jpg" alt="María Montaño" class="guardian-img">
+      <p class="guardian-text">Esta fue la antigua vivienda de María Montaño, donde con amor, esfuerzo y sabiduría 
+        ancestral forjó su hogar y dio origen a la gran familia Montaño. Aunque hoy en día este
+         espacio se encuentra abandonado, sigue siendo un símbolo vivo de memoria, raíces familiares
+          y del legado espiritual que permanece en el corazón de la comunidad Wiwa.</p>
+    </div>
+  
+    <div class="guardian">
+      <img src="piñoncito/segundo diaz.jpg" alt="Segundo Día" class="guardian-img">
+      <p class="guardian-text">Antigua vivienda donde Segundo Día vivió y forjó su hogar.</p>
+    </div>
+  </div>
+
+    <div id="Relatos de la Abuela " class="section">
+    <h2>relatos de la abuela  montero</h2> 
+    <p>Durante un diálogo profundo y significativo con la mayor Carmen Isabel Montero Malo, según su cédula, se indica que nació el 15 de mayo de 1950. Sin embargo, al escucharla relatar con tanta claridad y detalle sucesos de tiempos antiguos, consideramos que podría contar con más edad de la registrada, pues sus memorias se remontan a épocas muy remotas, en las que las condiciones de vida eran completamente distintas a las actuales.
+
+Ella compartió que, en aquellos tiempos memorables, las viviendas en la comunidad de Piñoncito eran construidas con techos de paja —conocida también como docora— y paredes de barro. Estas casas eran humildes, pero profundamente armonizadas con la naturaleza y los conocimientos ancestrales. Las primeras familias que habitaron y construyeron en esta comunidad, según sus recuerdos, fueron los Montaño y los Gil. Ellos, con sus manos y saberes, levantaron los primeros hogares de lo que hoy conocemos como Piñoncito.
+
+En esos días no se conocía el azúcar como hoy la usamos. Lo que predominaba era la panela, producida artesanalmente y utilizada para endulzar. Todo se molía en piedra, desde el maíz hasta otros ingredientes esenciales para la alimentación diaria. Los alimentos eran preparados desde la visión de la dualidad, una concepción ancestral que equilibra lo femenino y lo masculino, lo espiritual y lo terrenal.
+
+Carmen Isabel también compartió una experiencia particular sobre una niña que llegó a la comunidad y comenzó a estudiar allí. La mayor relató que, en el proceso de formación de las sagas —las mujeres sabias que preservan el conocimiento ancestral—, existían reglas estrictas de alimentación y comportamiento. Por ejemplo, se debía comer sin sal, sin carne, y se consumían alimentos como corcoma y jorito. Las prácticas eran rigurosas y espirituales, y todo se asaba, sin aceite, sin aditivos. Parte del aprendizaje incluía la observación y el entendimiento natural de los procesos de la vida, como la reproducción de los animales, todo desde un enfoque armónico y respetuoso. Sin embargo, con nostalgia y preocupación, la mayor señaló cómo muchas de esas normas y ordenamientos espirituales se han ido perdiendo con el tiempo.
+
+Al finalizar nuestra conversación, le hicimos una pregunta clave:
+"¿Será que podemos recuperar nuestras costumbres?"
+A lo que ella, con mirada sabia y profunda, respondió que sí, que es posible, siempre que haya voluntad colectiva, respeto por los mayores, y sobre todo, amor por la cultura y por la memoria ancestral. Recuperar nuestras costumbres no solo es una opción, sino una responsabilidad que debemos asumir para que las nuevas generaciones no pierdan la esencia de ser Wiwa..</p> 
+  </div>
+
+  
+
+  <div id="actualidad" class="section">
+    <h2>Piñoncito Hoy</h2>
+    <p>Hoy la comunidad , Piñoncito es hogar de familias desplazadas por el conflicto armado. Estas familias, buscando un espacio seguro y digno, 
+      han hecho de esta comunidad su lugar de vida. A través de la agricultura del maíz, yuca, plátano, hortalizas y la pesca artesanal,
+      han levantado sus hogares, construyendo una economía basada en el trabajo comunitario y el respeto por la tierra. 
+      Cada cosecha, cada pesca, cada día, es una afirmación de resistencia, memoria y esperanza.</p>
+  </div>
+
+  <button class="back-button" onclick="location.href='index.html'"> 
+    <i class="fas fa-home"></i> Ir al inicio
+  </button>
+
+  <div class="footer-line"></div>
+<footer id="contacto">
+    <div class="footer-container">
+      <div class="footer-info">
+        <h1>Contacto</h1>
+        <p>
+          Para más información sobre <strong>Guardianes de la Memoria Ancestral</strong>, contáctanos:
+          <a href="mailto:guardianmemoriancestral@gmail.com">guardianmemoriancestral@gmail.com</a>
+        </p>
+      </div>
+  
+      <div class="footer-social">
+        <h2>Síguenos</h2>
+        También puedes seguirnos en nuestras redes sociales:
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/profile.php?id=61573142267818" target="_blank">
+              <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/guardian_memoria_ancestral?igsh=dHJoZDZzNDVvenFy" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+            </a>
+          </li>
+        </ul>
+      </div>
+  
+    <div class="footer-bottom">
+      <p> © 2025 - Proyecto Cultural Wiwa. Todos los derechos reservados.</p>
+    </div>
+    
+  </footer>
+  <div class="footer-line"></div>
+
+  <script>
+    function mostrarSeccion(id) {
+      const secciones = document.querySelectorAll('.section');
+      secciones.forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
