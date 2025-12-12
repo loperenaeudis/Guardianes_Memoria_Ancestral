@@ -1,0 +1,125 @@
+/* ==== PALETA ANCESTRAL NATURAL ==== */
+:root {
+    --tierra-oscura: #4E3822;
+    --tierra-verde: #7A8F3E;
+    --fuego-naranja: #D97A1A;
+    --fuego-rojo: #BB4A27;
+    --agua-azul: #1E4E66;
+    --nieve-blanco: #F2F2F2;
+}
+
+/* ==== MENÚ LATERAL VERTICAL ==== */
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 240px;
+    height: 100vh;
+    background: var(--tierra-oscura);
+    padding-top: 40px;
+    border-right: 5px solid var(--fuego-naranja);
+    z-index: 999;
+}
+
+.menu-lateral nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu-lateral nav ul li {
+    margin: 20px 0;
+}
+
+.menu-lateral nav ul li a {
+    color: var(--nieve-blanco);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: "Georgia", serif;
+    padding: 12px 20px;
+    display: block;
+    transition: 0.4s ease;
+    border-left: 4px solid transparent;
+}
+
+.menu-lateral nav ul li a:hover {
+    background: var(--tierra-verde);
+    border-left: 4px solid var(--fuego-naranja);
+    transform: translateX(10px);
+}
+
+/* ===== Ajuste del body para que no tape el menú ===== */
+body {
+    margin-left: 240px;
+    background-color: var(--nieve-blanco);
+}
+
+/* ==== HERO PRINCIPAL ==== */
+.hero-pro {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url("caminandoespalda.jpg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.5),
+        rgba(30, 78, 102, 0.7) /* azul agua */
+    );
+}
+
+.hero-content-pro {
+    position: relative;
+    max-width: 850px;
+    text-align: center;
+    color: var(--nieve-blanco);
+    z-index: 2;
+}
+
+.hero-content-pro h1 {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 12px black;
+    font-family: "Georgia", serif;
+    color: var(--nieve-blanco);
+}
+
+.separator-pro {
+    width: 50%;
+    height: 4px;
+    background: var(--fuego-rojo);
+    border: none;
+    margin: 15px auto 25px;
+}
+
+.hero-content-pro p {
+    color: var(--nieve-blanco);
+    font-size: 1.2rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+/* Botón estilo fuego */
+.hero-btn-pro {
+    background: var(--fuego-naranja);
+    color: var(--nieve-blanco);
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.hero-btn-pro:hover {
+    background: var(--tierra-verde);
+    color: var(--tierra-oscura);
+}
